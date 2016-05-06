@@ -1,0 +1,53 @@
+body{
+    font-family:Arial,sans-serif;
+    font-size:16px;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+table{
+    margin:15px auto;
+    border: 1px solid #ddd;
+    /*セルのボーダーの表示の仕方を指定する*/
+    border-collapse:collapse;
+}
+
+th{
+    background:#eee;
+}
+
+th,td{
+    padding: 7px;
+    text-align:center;
+}
+
+.title{
+    margin: 0 auto;
+}
+}
+
+/* 日曜日の色付け*/
+.youbi_0{
+    color: red;
+}
+
+/* 土曜日の色付け*/
+.youbi_6{
+    color: blue;
+}
+
+.today{
+    font-weight: bold;
+    color:#3762b3;
+}
+
+.gray{
+    color:#dedede;
+}
+
+
+
