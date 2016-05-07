@@ -2,20 +2,12 @@
 
 require 'Calender.php';
 
+//require 'Calender_testcode.php';
+
 
 function h($s){
     return htmlspecialchars($s,ENT_QUOTES,'UTF-8');
 }
-
-
-/* カレンダーを指定した値を受け取る
-    if(isset($_GET['t'])){
-    $month=$_GET['t'];
-    var_dump($month);
-     
-    }
-*/
-
     
      
 
