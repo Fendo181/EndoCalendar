@@ -29,7 +29,7 @@ $cal = new \Myapp\Calender();
         <h1>遠藤カレンダー</h1>
         </center>
        
-        <table>
+        <table border="1">
             <!--前月翌月へのリンク -->
             <thead>
                 <tr>
@@ -61,9 +61,9 @@ $cal = new \Myapp\Calender();
                 </tr>
                 <tr>
                   <th colspan="7">
-                   <form action="index.php" method="get">
+                   <form action="" method="get">
                     <input type="month" name='t' >
-                    <input type="submit" value="送信">
+                    <input type="submit" value="表示">
                    </form>
                     </th>
                 </tr>

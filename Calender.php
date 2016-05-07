@@ -78,7 +78,7 @@ class Calender{
             if($day->format('w') === '0'){ $body .='</tr><tr>'; }
             //当日の値を太字にする
             $todayClass=($day->format('Y-m-d') === $today->format('Y-m-d'))? 'today' :'';
-            $body .= sprintf('<td class="youbi_%d %s">%d</td>',
+            $body .= sprintf('<td class="youbi_%d %s"><a href="">%d</a></td>',
             $day->format('w'),//youbi_%d
             $todayClass,//%s
             $day->format('d')); //%d
