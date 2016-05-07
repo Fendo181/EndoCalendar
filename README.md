@@ -4,6 +4,14 @@
 PHPで1からカレンダーを設計する。  
 PHPのオブジェクト指向的コーディングを学ぶ。
 
+##一般的な対応表
+|呼び出し方|インスタンスプロパティ|インスタンスメソッド|staticプロパティ|static メソッド|
+|:------:|:-----------------:|:---------------:|:------------:|:------------:|
+|class外から|$a->name;|$a->name();|クラス名::$name|クラス名::name()|
+|インスタンスメソッッド内から|$thisi->name|$this->name()|self::$name|self::neme()|
+|静的メソッド内から|なし|なし|self::$name|self::name()|
+
+
 
 ##外観  
 ![clender](https://github.com/Fendo181/Git_repos/blob/master/PHP_Calender/Top.png)

@@ -30,14 +30,15 @@ th,td{
 }
 }
 
-/* 日曜日の色付け*/
-.youbi_0{
-    color: red;
-}
 
 /* 土曜日の色付け*/
 .youbi_6{
     color: blue;
+}
+
+/* 日曜日の色付け*/
+.youbi_0{
+    color: red;
 }
 
 .today{
