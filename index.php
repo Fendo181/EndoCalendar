@@ -21,7 +21,7 @@ $cal = new \Myapp\Calender();
     <head>
         <meta charset="UTF-8">
         <title>Welcome Endo calneder</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles_calender.css">
     </head>
 
     <body>
@@ -46,7 +46,7 @@ $cal = new \Myapp\Calender();
                     <td>Tue</td>
                     <td>Wed</td>
                     <td>Thu</td>
-                    <td>Sun</td>
+                    <td>Fri</td>
                     <td>Sat</td>
                 </tr>
                 <!-- カレンダ  -->
