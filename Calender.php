@@ -10,7 +10,10 @@ class Calender{
     /* プロパティ */
     public $prev; //前月
     public $next; //次月
+    
     public $yearMonth; //今年
+    
+
     
     //今月
     private $_thisMonth;
@@ -36,6 +39,7 @@ class Calender{
     
         $this->prev=$this->_createPrevLink();
         $this->next=$this->_createNextLink();
+        
         $this->yearMonth=$this->_thisMonth->format('F Y'); //F:月のフルスペル Y:年の四桁
     }
 
@@ -48,6 +52,7 @@ class Calender{
         $dt=clone $this->_thisMonth;
         return $prev=$dt->modify('+1 month')->format('Y-m');
     }
+    
     
     public function show(){
         $tail=$this->_getTail();
@@ -73,15 +78,22 @@ class Calender{
         //今日の日程
         $today=new \datetime('today');
         
+        /* 当日のリンクを作成する。*/
+        $day_link =clone $this->_thisMonth;
+        $count=0;
+        
         foreach ($period as $day){
             //曜日を[w]formatで数値変換を行い0(日曜日)の時に行を折り返す
             if($day->format('w') === '0'){ $body .='</tr><tr>'; }
             //当日の値を太字にする
             $todayClass=($day->format('Y-m-d') === $today->format('Y-m-d'))? 'today' :'';
-            $body .= sprintf('<td class="youbi_%d %s"><a href="">%d</a></td>',
+            $body .= sprintf('<td class="youbi_%d %s"><a href=" %s">%d</a></td>',
             $day->format('w'),//youbi_%d
-            $todayClass,//%s
+            $todayClass,//%s当日を
+            $day_link->modify($count.'day')->format('Y-m-d'),
             $day->format('d')); //%d
+            
+            $count=1;
         }
         return $body;
     }
