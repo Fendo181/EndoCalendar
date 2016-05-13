@@ -11,6 +11,8 @@ class Calender{
     public $prev; //前月
     public $next; //次月
     
+    //public $day_link;
+    
     public $yearMonth; //今年
     
 
@@ -39,6 +41,7 @@ class Calender{
     
         $this->prev=$this->_createPrevLink();
         $this->next=$this->_createNextLink();
+        //$this->next=$this->_createDayLink();
         
         $this->yearMonth=$this->_thisMonth->format('F Y'); //F:月のフルスペル Y:年の四桁
     }
@@ -52,6 +55,13 @@ class Calender{
         $dt=clone $this->_thisMonth;
         return $prev=$dt->modify('+1 month')->format('Y-m');
     }
+    
+    /*
+    private function _createDayLink(){
+        $dt=clone $this->_thisMonth;
+        return $day_link=$dt->modify($count.'day')->format('Y-m-d');
+    }
+    */
     
     
     public function show(){
@@ -87,11 +97,11 @@ class Calender{
             if($day->format('w') === '0'){ $body .='</tr><tr>'; }
             //当日の値を太字にする
             $todayClass=($day->format('Y-m-d') === $today->format('Y-m-d'))? 'today' :'';
-            $body .= sprintf('<td class="youbi_%d %s"><a href=" %s">%d</a></td>',
-            $day->format('w'),//youbi_%d
-            $todayClass,//%s当日を
+            $body .= sprintf('<td class="youbi_%d %s"><a href="todo.php?daydo=%s">%d</a></td>',
+            $day->format('w'),
+            $todayClass,
             $day_link->modify($count.'day')->format('Y-m-d'),
-            $day->format('d')); //%d
+            $day->format('d')); 
             
             $count=1;
         }
